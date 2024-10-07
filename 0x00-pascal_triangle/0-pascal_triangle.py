@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
 """
 '0-pascal_triangle' creates a function that generate a Pascal triangle
 """
