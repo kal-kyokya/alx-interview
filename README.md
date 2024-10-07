@@ -1,2 +1,3 @@
 # alx-interview
-Tasks and tests preparing one for Industry level interview questions
+
+This repository is home to all resolved tasks and tests given by ALX Africa to the selected few members of its Software Engineering Backend Specialization program and aims at preparing one for Industry level interview questions.
