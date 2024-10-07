@@ -15,15 +15,15 @@ def pascal_triangle(n):
     triangle = [0 for i in range(n)]
 
     # Return an empty list if n is less than 0
-    if (n < 0):
+    if (n <= 0):
         return []
 
     # Handle cases where input is 0
-    if (n == 0):
+    if (n == 1):
         return [[1]]
 
     # Handle cases where input is 1
-    if (n == 1):
+    if (n == 2):
         return [[1], [1, 1]]
 
     # Implementing Pascal's Triangle logic:
