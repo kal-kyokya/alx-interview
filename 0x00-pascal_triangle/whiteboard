@@ -1,0 +1,30 @@
+		Case n = 5:
+if (n == 0 || n == 1) return ([1] and [1, 1] respectively)
+
+triangle = [[1], [1,1], ...]
+largest_index = n - 1 = 4
+rows = max_colums = n = 5
+
+counter = 0
+while (counter < n) #counter++
+each_row_content(counter):
+	# return list of (counter + 1) elements
+	size = counter + 1
+	row = [0 for i in range(size)]
+	row[0] = row[-1] = 1
+
+	forward = 1
+	backward = -2
+	# There is symmetry about the middle of the triangle : [-5,-4,-3,-2,-1,0,1,2,3,4,5]
+	# row[forward] = row[backward]
+	while (forward <= size/2) #forward++
+	row[forward] = triangle[current-1][forward-1] + triangle[current-1][forward]
+	row[forward] = row[backward]
+
+---
+
+[1]
+[1,1]
+[1,2,1]
+[1,3,3,1]
+[1,4,6,4,1]
