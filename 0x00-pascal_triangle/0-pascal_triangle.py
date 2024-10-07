@@ -20,11 +20,11 @@ def pascal_triangle(n):
 
     # Handle cases where input is 0
     if (n == 0):
-        return [1]
+        return [[1]]
 
     # Handle cases where input is 1
     if (n == 1):
-        return [1, 1]
+        return [[1], [1, 1]]
 
     # Implementing Pascal's Triangle logic:
     # Initialize the first two rows
