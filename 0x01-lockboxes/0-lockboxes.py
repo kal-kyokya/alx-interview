@@ -1,58 +1,27 @@
 #!/usr/bin/python3
 """
-'0-lockboxes' has a python script that solves a problem involving nested lists.
+You have n number of locked boxes in front of you.
+Each box is numbered sequentially
+from 0 to n - 1 and each box may
+contain keys to the other boxes.
 """
 
 
 def canUnlockAll(boxes):
-    """Determine whether keys to all boxes were acquired during search.
-    Args:
-        Boxes: A list whose elements represent keys to boxes.
-    Return:
-        A boolean; True if all boxes were opened, False otherwise.
     """
-    # Ensure that the input is a list of lists
-    if (type(boxes) != list or len(boxes) == 0):
-        return (False)
+     a method that determines if all the boxes can be opened.
 
-    # Store the number of available boxes
-    boxes_no = len(boxes)
+    :param boxes:
+    :return: True or False
+    """
+    if not boxes or type(boxes) is not list:
+        return False
 
-    # Handle single box case
-    if (boxes_no == 1):
-        return (True)
-
-    # Ready a variable to hold the keys found in each box
-    keys = set()
-
-    # Handle Case of two boxes
-    if (boxes_no == 2):
-        if (len(boxes[0]) == 0):
-            return (False)
-        return (True if (1 in boxes[0]) else False)
-
-    # Case: More than two boxes
-    visited = set()
-    visiting = 0
-    to_visit = []
-    for count in range(boxes_no):
-        # Access a specific box
-        # If any, Extract and Store the keys
-        for key in boxes[visiting]:
-            keys.add(key)
-
-        if (len(keys) == boxes_no):
-            return (True)
-        if (len(keys) == (boxes_no - 1) and 0 not in keys):
-            return (True)
-
-        visited.add(visiting)
-        not_visited = list(filter(lambda x: x not in visited, boxes[visiting]))
-        to_visit.extend(not_visited)
-
-        if (len(to_visit) == 0):
-            return False
-
-        visiting = to_visit.pop(0)
-
-    return ('In progress...')
+    unlocked = [0]
+    for n in unlocked:
+        for key in boxes[n]:
+            if key not in unlocked and key < len(boxes):
+                unlocked.append(key)
+    if len(unlocked) == len(boxes):
+        return True
+    return False

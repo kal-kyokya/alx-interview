@@ -1,12 +1,9 @@
 #!/usr/bin/python3
-
 canUnlockAll = __import__('0-lockboxes').canUnlockAll
 
-boxes = "Dems"
-print(canUnlockAll(boxes))
-
-boxes = [[]]
-print(canUnlockAll(boxes))
+print(canUnlockAll("kyokya"))
+print(canUnlockAll(None))
+print(canUnlockAll([[]]))
 
 boxes = [[], [1, 4, 8, 25]]
 print(canUnlockAll(boxes))
