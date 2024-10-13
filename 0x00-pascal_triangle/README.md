@@ -29,6 +29,9 @@ if __name__ == "__main__":
     print_triangle(pascal_triangle(5))
 
 kal-kyokya@ubuntu:~/0x00$ 
+```
+Results:
+```
 kal-kyokya@ubuntu:~/0x00$ ./0-main.py
 [1]
 [1,1]
