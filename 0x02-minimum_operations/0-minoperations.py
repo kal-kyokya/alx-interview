@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-'0-minoperations' contains a function meant to manipulate a file
+'0-minoperations' contains a ITERATIVE function meant to manipulate a file
 containing a single character using ['Copy All', 'Paste'] and
 end up populating it with a user defined number 'n' of character
 """
@@ -9,29 +9,28 @@ from typing import Any, List, Optional
 
 
 def minOperations(n: int) -> int:
-    """Computes the required  minimum amount of operations
-    to fill a text file with a number n of characters.
+    """Computes the minimum number of operations
+    to fill a text file with exactly n characters
+    using only 'Copy All' and 'Paste'.
     """
-    # Checks the input as [Positive, Non-zero, Integer]
+    # Checks the input as a: Positive, Non-zero, Integer
     if not isinstance(n, int) or n <= 0:
         return (0)
 
-    # Handle cases where n is 1
+    # Edge case for 1: no operations are needed
     if n == 1:
-        return (0)
+        return 0
 
-    # Handle cases where n is a prime number
-    if n in [2, 3, 5] or all([n % 2, n % 3, n % 5]):
-        return (n)
+    # Initialize variable for the minimum number of operations
+    operations = 0
 
-    # Process any other value using dynamic programming and memoization
-    memoization = [i if (i in [1, 2, 3, 5]) else None for i in range(n + 1)]
+    # Factorize n by dividing it by its smallest factors
+    # and accumulate the operations required for each factor
+    divisor = 2
+    while n > 1:
+        while n % divisor == 0:
+            operations += divisor
+            n //= divisor
+        divisor += 1
 
-    # Cache minimum operations of all values lesser than n
-    for count in range(4, n + 1):
-        for div in [2, 3, 5]:
-            if count % div == 0:
-                memoization[count] = div + minOperations(int(count/div))
-                break
-
-    return (memoization[n])
+    return operations
