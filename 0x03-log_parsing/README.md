@@ -8,7 +8,6 @@ This directory contains a python script solving the log parsing problem describe
 
 * Input format:
 	* 'IP_Address' - 'date' "GET /projects/260 HTTP/1.1" 'status_code' 'file_size'
-
 (if the format is not this one, the line must be skipped)
 * After every 10 lines and/or a keyboard interruption (CTRL + C), print these statistics from the beginning:
 	* Total file size: File size: <total size>
