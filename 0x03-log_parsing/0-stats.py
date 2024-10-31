@@ -17,9 +17,8 @@ status_c = {code: 0 for code in codes}
 # Handle Empty line input
 if len(stdin) == 0:
     print('File size: 0')
-
-# Isolate and Process each line
 else:
+    # Isolate and Process each line
     for line in stdin:
         # Extract the must-have fields
         ip = line.split()[0]
