@@ -4,51 +4,47 @@
 """
 from sys import stdin
 from datetime import datetime
+from collections import defaultdict
 
-
-# Track the number of lines processed
+# Initialize counters
 count = 0
-
-# Track the total file size and status code ratio
 total_size = 0
-codes = ['200', '301', '400', '401', '403', '404', '405', '500']
-status_c = {code: 0 for code in codes}
+status_c = defaultdict(int)
+codes = {'200', '301', '400', '401', '403', '404', '405', '500'}
 
-# Isolate and Process each line
 for line in stdin:
+    parts = line.split()
 
-    # Extract the must-have fields
-    ip = line.split()[0]
-    dash = line.split()[1]
-    date = f"{line.split()[2].strip('[')} {line.split()[3].strip(']')}"
-    string = f"{line.split()[4]} {line.split()[5]} {line.split()[6]}"
-    status_code = line.split()[7]
-    file_size = line.split()[8]
-
-    # Ensure each field adhere to the expected format
-    if (len(line.split()) != 9 or dash != '-' or
-        string != '"GET /projects/260 HTTP/1.1"' or
-        type(int(status_code)) != int or
-        type(int(file_size)) != int):
-        # Skip this line
+    # Basic validation checks
+    if len(parts) != 9 or parts[1] != '-' or\
+       parts[4:7] != ['"GET', '/projects/260', 'HTTP/1.1"']:
         continue
 
-    for num in ip.split('.'):
-        if type(int(num)) != int:
-            continue
+    # Field extraction
+    string = f"{parts[2].strip('[')} {parts[3].strip(']')}"
+    ip, _, date, status_code, file_size = (parts[0], parts[1], string,
+                                           parts[7], parts[8])
 
+    # Detailed validations
     try:
+        if not all(0 <= int(num) <= 255 for num in ip.split('.')):
+            continue
         datetime.strptime(date, '%Y-%m-%d %H:%M:%S.%f')
-    except ValueError:
+        status_code = str(int(status_code))
+        file_size = int(file_size)
+    except (ValueError, IndexError):
         continue
-    else:
-        count += 1
-        status_c[status_code] += 1
-        total_size += int(file_size)
 
-        if count == 10:
-            print("File size: {}".format(total_size))
-            for key, value in status_c.items():
-                if value and value != 0:
-                    print("{}: {}".format(key, value))
-            count = 0
+    # Update counters
+    count += 1
+    total_size += file_size
+    if status_code in codes:
+        status_c[status_code] += 1
+
+    # Print every 10 lines
+    if count == 10:
+        print(f"File size: {total_size}")
+        for code in sorted(codes):
+            if status_c[code]:
+                print(f"{code}: {status_c[code]}")
+        count = 0
