@@ -14,6 +14,7 @@ total_size = 0
 codes = ['200', '301', '400', '401', '403', '404', '405', '500']
 status_c = {code: 0 for code in codes}
 
+# Handle Empty line input
 if len(stdin) == 0:
     print('File size: 0')
 
