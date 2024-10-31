@@ -49,5 +49,6 @@ for line in stdin:
         if count == 10:
             print("File size: {}".format(total_size))
             for key, value in status_c.items():
-                print("{}: {}".format(key, value))
+                if value and value != 0:
+                    print("{}: {}".format(key, value))
             count = 0
