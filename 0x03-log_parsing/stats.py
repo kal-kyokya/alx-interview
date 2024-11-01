@@ -16,17 +16,18 @@ status_c = {code: 0 for code in codes}
 
 # Isolate and Process each line
 for line in stdin:
+    splits = line.split()
 
     # Extract the must-have fields
-    ip = line.split()[0]
-    dash = line.split()[1]
-    date = f"{line.split()[2].strip('[')} {line.split()[3].strip(']')}"
-    string = f"{line.split()[4]} {line.split()[5]} {line.split()[6]}"
-    status_code = line.split()[7]
-    file_size = line.split()[8]
+    ip = splits[0]
+    dash = splits[1]
+    date = f"{splits[2].strip('[')} {splits[3].strip(']')}"
+    string = f"{splits[4]} {splits[5]} {splits[6]}"
+    status_code = splits[7]
+    file_size = splits[8]
 
     # Ensure each field adhere to the expected format
-    if (len(line.split()) != 9 or dash != '-' or
+    if (len(splits) != 9 or dash != '-' or
         string != '"GET /projects/260 HTTP/1.1"' or
         type(int(status_code)) != int or
         type(int(file_size)) != int):
