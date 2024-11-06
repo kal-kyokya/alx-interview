@@ -21,7 +21,7 @@ This directory contains a python script solving the log parsing problem describe
 		* status codes should be printed in ascending order
 
 ```
-alexa@ubuntu:~/0x03-log_parsing$ cat 0-generator.py
+kal-kyokya@ubuntu:~/0x03-log_parsing$ cat 0-generator.py
 #!/usr/bin/python3
 import random
 import sys
@@ -40,7 +40,7 @@ for i in range(10000):
 ```
 Results:
 ```
-alexa@ubuntu:~/0x03-log_parsing$ ./0-generator.py | ./0-stats.py 
+kal-kyokya@ubuntu:~/0x03-log_parsing$ ./0-generator.py | ./0-stats.py 
 File size: 5213
 200: 2
 401: 1
@@ -83,7 +83,7 @@ Traceback (most recent call last):
 KeyboardInterrupt
     sleep(random.random())
 KeyboardInterrupt
-alexa@ubuntu:~/0x03-log_parsing$
+kal-kyokya@ubuntu:~/0x03-log_parsing$
 ```
 
 ---
