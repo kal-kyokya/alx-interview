@@ -10,7 +10,7 @@ This directory contains a Node script enabling manipulation of the Star Wars API
 * The first positional argument passed is the Movie ID:
 	* Example: ```3``` = “Return of the Jedi”
 * Display one character name per line ```in the same order as the “characters” list in the /films/ endpoint```
-* One must use the [Star wars API](https://https://swapi-api.alx-tools.com)
+* One must use the [Star wars API](https://swapi-api.alx-tools.com)
 * One must use the ```request``` module
 
 ```
