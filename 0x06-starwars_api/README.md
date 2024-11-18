@@ -5,7 +5,7 @@ This directory contains a Node script enabling manipulation of the Star Wars API
 ## Tasks To Complete
 + [x] **0. Star Wars Characters**
 
-[0-starwars_characters.py](https://github.com/kal-kyokya/alx-interview/tree/main/0x06-starwars_api) This Star Wars API script prints all characters of a Star Wars movie:
+[0-starwars_characters.js](https://github.com/kal-kyokya/alx-interview/tree/main/0x06-starwars_api) This Star Wars API script prints all characters of a Star Wars movie:
 
 * The first positional argument passed is the Movie ID:
 	* Example: ```3``` = “Return of the Jedi”
@@ -111,4 +111,4 @@ $ export NODE_PATH=/usr/lib/node_modules
 
 -   GitHub repository: `alx-interview`
 -   Directory: `0x06-starwars_api`
--   File: `0-starwars_characters.py`
+-   File: `0-starwars_characters.js`
