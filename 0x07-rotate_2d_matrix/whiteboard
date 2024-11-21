@@ -1,20 +1,24 @@
+/* Rotating an n x n 2D matrix 90 degrees clockwise */
+
+INITIAL MATRIX:
+---
 	C0 C1 C2
 R0	00 01 02
 R1	10 11 12
 R2	20 21 22
+---
 
+ALGORITHM:
+---
+Indices:
+New Row == Old Column
+New Column == |Old Row - [length(matrix) - 1]|
+---
+
+ROTATED MATRIX:
+---
 	C0 C1 C2
 R0	20 10 00
 R1	21 11 01
 R2	22 12 02
-
-Index:
-New Row == Old Column
-New Column == |Old Row - [length(matrix) - 1]|
-
-
-
-	R2 R1 R0
-C0	20 10 00
-C1	21 11 01
-C2	22 12 02
+---
