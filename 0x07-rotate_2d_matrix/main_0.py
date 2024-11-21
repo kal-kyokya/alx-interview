@@ -10,21 +10,6 @@ if __name__ == "__main__":
               [4, 5, 6],
               [7, 8, 9]]
 
-    [print(matrix[i]) for i in range(len(matrix))]
-    trans_matrix = transpose_2d_matrix(matrix)
-    matrx = rotate_2d_matrix(trans_matrix)
-    print("\nResults:")
-    [print(matrx[i]) for i in range(len(matrx))]
-    print("---")
-
-    matrix = [[1, 2, 3, 4],
-              [5, 6, 7, 8],
-              [9, 10, 11, 12],
-              [13, 14, 15, 16]]
-
-    [print(matrix[i]) for i in range(len(matrix))]
-    trans_matrix = transpose_2d_matrix(matrix)
-    matrx = rotate_2d_matrix(trans_matrix)
-    print("\nResults:")
-    [print(matrx[i]) for i in range(len(matrx))]
-    print("---")
+    transpose_2d_matrix(matrix)
+    rotate_2d_matrix(matrix)
+    print(matrix)
