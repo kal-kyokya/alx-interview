@@ -66,6 +66,7 @@ For the “0. Rotate 2D Matrix” project, one is tasked with implementing an in
 By understanding these concepts, one will be able to approach the problem methodically:
 * First transposing the matrix
 * And then reversing each row to achieve a 90-degree clockwise rotation.
+
 This project not only tests ones ability to manipulate 2D matrices but also challenges one to think about optimizing ones solution to operate in-place, thus improving their problem-solving and algorithmic thinking skills in Python.
 
 ---
