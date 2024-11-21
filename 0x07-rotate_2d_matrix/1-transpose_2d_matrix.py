@@ -1,18 +1,18 @@
 #!/usr/bin/python3
 """
-'0-rotate_2d_matrix.py' contains a function that rotates a matrix
+'0-transpose_2d_matrix.py' contains a function that transposes a matrix
 """
 
-def rotate_2d_matrix(matrx):
+def transpose_2d_matrix(matrx):
     """
-    Rotates a n x n matrix by 90 degrees clockwise.
+    Transposes a n x n matrix by 90 degrees clockwise.
     """
     matrix = [[0] * len(matrx[i]) for i in range(len(matrx))]
 
     for i in range(len(matrix)):
         for j in range(len(matrix[i])):
             temp = matrx[i][j]
-            matrix[i][j] = matrx[i][-1 - j]
-            matrix[i][-1 - j] = temp
+            matrix[i][j] = matrx[j][i]
+            matrix[j][i] = temp
 
     return matrix
