@@ -1,17 +1,20 @@
 #!/usr/bin/python3
 """
-'0-rotate_2d_matrix.py' contains a function that rotates a matrix
+ Rotate 2D Matrix
 """
 
 
-def rotate_2d_matrix(matrx):
+def rotate_2d_matrix(matrix):
     """
-    Rotates a n x n matrix by 90 degrees clockwise.
+    Given an n x n 2D matrix, rotate it 90 degrees clockwise.
     """
-    matrix = matrx
-
-    for i in range(len(matrix)):
-        for j in range(len(matrix[i])):
-            temp = matrix[i][j]
-            matrix[i][j] = matrix[i][-1 - j]
-            matrix[i][-1 - j] = temp
+    n = len(matrix)
+    for layer in range(n // 2):
+        first, last, offset = layer, n - 1 - layer, 0
+        for i in range(first, last):
+            top = matrix[first][i]
+            matrix[first][i] = matrix[last - offset][first]
+            matrix[last - offset][first] = matrix[last][last - offset]
+            matrix[last][last - offset] = matrix[i][last]
+            matrix[i][last] = top
+            offset += 1
