@@ -1,0 +1,36 @@
+DATA
+
+* We have an integer 'total'.
+* A list of integers to be summed to get total.
+
+-----
+PROBLEM
+
+-> Assuming there is any solution:
+* Find the 'minimum' amount of operations leading to total.
+
+-----
+TEST CASE
+
+     total: 37
+     list: [1, 2, 25]
+     Result: 7
+
+-----
+SOLUTION
+
+1. Check feasibility (Inputs)
+  {
+	total: [-(infinity), 0],
+  }
+2. Sort the list: Ascending order.
+3. Initialize 2 variables:
+  {
+	sum: 0,
+	operations: 0
+  }
+4. Pop the last list item (largest) if greater than ${'total'-'sum'}.
+       Or instead of popping; initialize a tracking pointer, and then:
+5. Move the pointer 1 step towards index 0 if list item greater than ${'total'-'sum'}.
+6. Else add current item to 'sum' and increment 'operations' by 1.
+7. If 'sum' is less than 'total', back to step 5 with 'total' now equal to: ${'total'-'sum'}.
