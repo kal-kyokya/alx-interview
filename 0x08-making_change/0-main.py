@@ -3,7 +3,7 @@
 Main file for testing
 """
 
-makechange = __import__('0-make_change').makeChange
+makechange = __import__('0-making_change').makeChange
 
 print(makechange([], 37))
 
