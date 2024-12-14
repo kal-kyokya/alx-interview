@@ -3,7 +3,7 @@
 
 AlgorithmPython
 
--   By: Carrie Ybay, Software Engineer at Holberton School
+-   By: Jean-Paul KYOKYA, Software Engineer at ALX Africa
 -   Weight: 1
 
 Requirements
@@ -61,20 +61,20 @@ Third round: `1`
 **Result: Ben has the most wins**
 
 ```
-carrie@ubuntu:~/0x0A-primegame$ cat main_0.py
+kal-kyokya@ubuntu:~/0x0A-primegame$ cat main_0.py
 #!/usr/bin/python3
 
 isWinner = __import__('0-prime_game').isWinner
 
 print("Winner: {}".format(isWinner(5, [2, 5, 1, 4, 3])))
 
-carrie@ubuntu:~/0x0A-primegame$
+kal-kyokya@ubuntu:~/0x0A-primegame$
 ```
 
 ```
-carrie@ubuntu:~/0x0A-primegame$ ./main_0.py
+kal-kyokya@ubuntu:~/0x0A-primegame$ ./main_0.py
 Winner: Ben
-carrie@ubuntu:~/0x0A-primegame$
+kal-kyokya@ubuntu:~/0x0A-primegame$
 ```
 
 **Repo:**
